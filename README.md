@@ -17,6 +17,9 @@ nix flake add mirage 'github:ehmry/mirage-nix'
 
 nix app mirage --impure --
   # Invoke the mirage tool
+
+nix dev-shell mirage --impure
+  # Enter a shell with the mirage tool
 ```
 
 # Updating
