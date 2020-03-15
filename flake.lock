@@ -1,0 +1,59 @@
+{
+  "inputs": {
+    "nixpkgs": {
+      "info": {
+        "lastModified": 1584242278,
+        "narHash": "sha256-8BlqpzW2yOBMUjqQp8x8IzL7qDDLF6xYyjhmkBEUiyU="
+      },
+      "inputs": {},
+      "locked": {
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "ea8efb20a75b56284ecb8bc0d1d4cb9acc202620",
+        "type": "github"
+      },
+      "original": {
+        "id": "nixpkgs",
+        "type": "indirect"
+      }
+    },
+    "opam2nix": {
+      "info": {
+        "lastModified": 1584176452,
+        "narHash": "sha256-4mDb+hdCzaMOhVK0OwetWGD9oqT4sEl5oQlKIQLtjU8="
+      },
+      "inputs": {
+        "nixpkgs": {
+          "info": {
+            "lastModified": 1584242278,
+            "narHash": "sha256-8BlqpzW2yOBMUjqQp8x8IzL7qDDLF6xYyjhmkBEUiyU="
+          },
+          "inputs": {},
+          "locked": {
+            "owner": "NixOS",
+            "repo": "nixpkgs",
+            "rev": "ea8efb20a75b56284ecb8bc0d1d4cb9acc202620",
+            "type": "github"
+          },
+          "original": {
+            "id": "nixpkgs",
+            "type": "indirect"
+          }
+        }
+      },
+      "locked": {
+        "owner": "ehmry",
+        "repo": "opam2nix",
+        "rev": "1ba9768d5745f01783f32af80ba5e1bcaf0c9ede",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ehmry",
+        "ref": "v1-flake",
+        "repo": "opam2nix",
+        "type": "github"
+      }
+    }
+  },
+  "version": 4
+}
