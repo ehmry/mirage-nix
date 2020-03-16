@@ -35,7 +35,7 @@
         inherit (opam2nix.apps.x86_64-linux) opam2nix;
       };
 
-      defaultApp.x86_64-linux = mirage;
+      defaultApp.x86_64-linux = self.apps.x86_64-linux.mirage;
 
       devShell.x86_64-linux = pkgs.mkShell {
         buildInputs = with pkgs; [ gnumake opam ] ++ [ mirage ];

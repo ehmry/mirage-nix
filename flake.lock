@@ -19,8 +19,8 @@
     },
     "opam2nix": {
       "info": {
-        "lastModified": 1584176452,
-        "narHash": "sha256-4mDb+hdCzaMOhVK0OwetWGD9oqT4sEl5oQlKIQLtjU8="
+        "lastModified": 1584348294,
+        "narHash": "sha256-Ok/0Gq8qVO4FZ0Vvzt7B6oM4HavQ+er5++iYLNfKUT4="
       },
       "inputs": {
         "nixpkgs": {
@@ -44,7 +44,7 @@
       "locked": {
         "owner": "ehmry",
         "repo": "opam2nix",
-        "rev": "1ba9768d5745f01783f32af80ba5e1bcaf0c9ede",
+        "rev": "7f1f78486e335ac0c551bf049dd488a6bf3954b1",
         "type": "github"
       },
       "original": {

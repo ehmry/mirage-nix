@@ -10,14 +10,14 @@ let
     src = self;
   };
 
-in selection.mirage.overrideAttrs (
-  attrs: {
-    nativeBuildInputs = attrs.nativeBuildInputs or [ ] ++ [ pkgs.makeWrapper ];
-    preFixup = let binPath = pkgs.lib.makeBinPath [ selection.dune ocaml pkgs.gcc ];
+in selection.mirage.overrideAttrs (attrs: {
+  nativeBuildInputs = [ pkgs.makeWrapper ];
+  preFixup =
+    let prePath = pkgs.lib.makeBinPath [ selection.dune ocaml pkgs.gcc ];
     in ''
       env
       wrapProgram $out/bin/mirage \
-        --prefix PATH : ${binPath} \
+        --prefix PATH : ${prePath} \
         --prefix OCAMLPATH : "$OCAMLPATH:$out/lib/ocaml/${ocaml.version}/site-lib"
     '';
-  })
+})
