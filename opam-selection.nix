@@ -3,14 +3,14 @@
 self:
 let
     lib = self.lib;
-    opam-commit = "c3c581927c178113432019cc9d2d064e718413a2";
+    opam-commit = "f16912c3173f14e6d258f40d19777201a6ba7842";
     pkgs = self.pkgs;
     repo = (pkgs.fetchFromGitHub) 
     {
       owner = "ocaml";
       repo = "opam-repository";
       rev = opam-commit;
-      sha256 = "1fnqzj2lvwzln04ajwmcmwbb63dc6pla96aks9nky5idzgrvp01p";
+      sha256 = "1268n35czb1lgddsvq1s9i1dqalbcx4jxz1v3583dl1s02msq0qi";
     };
     repoPath = self.repoPath;
     selection = self.selection;
@@ -478,16 +478,16 @@ in
       };
       opamSrc = repoPath repo 
       {
-        hash = "sha256:1g6pc3c8vv93pv73in4wpgh9arrhycy7m8jxv7i1xdsygsa7nx7q";
-        package = "packages/mirage/mirage.3.7.4";
+        hash = "sha256:0d42lh15331xwy24kv5a84l4fns9p78bgv3r5i69q8m64fsn4xz2";
+        package = "packages/mirage/mirage.3.7.5";
       };
       pname = "mirage";
       src = pkgs.fetchurl 
       {
-        sha256 = "1adrxij0izrrwr026vvifvpswwgr2imbk8h43byhwhw57bnw8kbr";
-        url = "https://github.com/mirage/mirage/releases/download/v3.7.4/mirage-v3.7.4.tbz";
+        sha256 = "09vy3n4qmxljyg7nxq4b7wxvpfpwass082d09ki6hq7alawf8n3c";
+        url = "https://github.com/mirage/mirage/releases/download/v3.7.5/mirage-v3.7.5.tbz";
       };
-      version = "3.7.4";
+      version = "3.7.5";
     };
     mirage-runtime = 
     {
@@ -503,16 +503,16 @@ in
       };
       opamSrc = repoPath repo 
       {
-        hash = "sha256:0svr69mdvva7wjbn10kmmwb84lgh2lhzxqmdxxdjjnqq9kwns6gc";
-        package = "packages/mirage-runtime/mirage-runtime.3.7.1";
+        hash = "sha256:0rb2c0wk667z56qga5i2h47adiiy8sxqlyy7zv9dyr466ic8jg0s";
+        package = "packages/mirage-runtime/mirage-runtime.3.7.5";
       };
       pname = "mirage-runtime";
       src = pkgs.fetchurl 
       {
-        sha256 = "14sfvinxc0pnvvzzn1p73a7mynr3phywdcixagygd1xnbq44q1rs";
-        url = "https://github.com/mirage/mirage/releases/download/v3.7.1/mirage-v3.7.1.tbz";
+        sha256 = "09vy3n4qmxljyg7nxq4b7wxvpfpwass082d09ki6hq7alawf8n3c";
+        url = "https://github.com/mirage/mirage/releases/download/v3.7.5/mirage-v3.7.5.tbz";
       };
-      version = "3.7.1";
+      version = "3.7.5";
     };
     mmap = 
     {
