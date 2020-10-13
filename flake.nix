@@ -1,45 +1,31 @@
 {
   description = "A flake for building MirageOS unikernels";
 
-  edition = 201909;
-
   inputs = {
-    opam2nix = {
-      type = "github";
-      owner = "ehmry";
-      repo = "opam2nix";
-      ref = "v1-flake";
-    };
-
+    opam2nix.url = "github:ehmry/opam2nix/v1-flake";
     nixpkgs.follows = "opam2nix/nixpkgs";
   };
 
   outputs = { self, nixpkgs, opam2nix }:
     let
-      pkgs = nixpkgs.legacyPackages.x86_64-linux;
-      mirage = import ./. {
-        inherit pkgs;
-        opam2nix = opam2nix.defaultApp.x86_64-linux;
-      };
+      systems = [ "aarch64-linux" "x86_64-linux" ];
+      forAllSystems = f: nixpkgs.lib.genAttrs systems (system: f system);
     in rec {
 
-      packages.x86_64-linux.mirage = mirage;
-      defaultPackage.x86_64-linux = mirage;
-
-      apps.x86_64-linux = {
-        mirage = {
-          type = "app";
-          program = mirage + "/bin/mirage";
+      packages = forAllSystems (system: {
+        mirage = import ./. {
+          pkgs = nixpkgs.legacyPackages.${system};
+          opam2nix = opam2nix.defaultApp.${system};
         };
+      });
 
-        inherit (opam2nix.apps.x86_64-linux) opam2nix;
-      };
+      defaultPackage = forAllSystems (system: self.packages.${system}.mirage);
 
-      defaultApp.x86_64-linux = self.apps.x86_64-linux.mirage;
-
-      devShell.x86_64-linux = pkgs.mkShell {
-        buildInputs = with pkgs; [ gnumake opam ] ++ [ mirage ];
-      };
+      devShell = forAllSystems (system:
+        with nixpkgs.legacyPackages.${system};
+        mkShell {
+          buildInputs = [ gnumake opam self.packages.${system}.mirage ];
+        });
 
     };
 }

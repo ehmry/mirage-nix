@@ -14,7 +14,7 @@ nix-env -i -f https://github.com/ehmry/mirage-nix/archive/master.tar.gz
 nix flake add mirage 'github:ehmry/mirage-nix'
   # Add this repository to the local registry
 
-nix app mirage
+nix run mirage
   # Invoke the mirage tool
 
 nix dev-shell mirage
